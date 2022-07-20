@@ -7,6 +7,9 @@ import { Player } from "./player.js";
 window.addEventListener('load', () => {
     document.querySelector('h1').style.display = "none";
 
+    // audio
+    document.getElementById('backsound').play();
+
     const canvas = document.getElementById('canvas1');
     const context = canvas.getContext('2d');
     canvas.width = 1920;
@@ -28,6 +31,7 @@ window.addEventListener('load', () => {
     }
     const fullscreenButton = document.getElementById('fullscreen');
     fullscreenButton.addEventListener('click', toggleFullScreesn)
+
 
     // input
     class Input {
@@ -100,7 +104,7 @@ window.addEventListener('load', () => {
             object.restart();
         })
         addEnemy.restart();
-
+        // backsound.play();
         gameover = false;
         animate(0);
     }
