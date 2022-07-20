@@ -10,7 +10,7 @@ export class Player {
         this.currentState = this.states[0];
         this.spriteWidth = 200;
         this.spriteHeight = 200;
-        this.width = this.spriteWidth * 1.2;
+        this.width = (this.spriteWidth * 1.2);
         this.height = this.spriteHeight * 1.2;
         this.groundMargin = 120;
         this.x = this.gameWidth / 2 - this.width;

@@ -9,8 +9,9 @@ window.addEventListener('load', () => {
 
     const canvas = document.getElementById('canvas1');
     const context = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = 1920;
+    canvas.height = 1080;
+
 
     // gameover
     let gameover = false;
