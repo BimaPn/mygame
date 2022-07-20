@@ -7,7 +7,7 @@ export class Enemies {
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
         this.frameX = 0;
-        this.speedX = Math.random() * .4 + .3;
+        this.speedX = Math.random() * .5 + .3;
         this.fps = 60;
         this.timer = 0;
         this.Spriteinterval = 1000 / this.fps;
@@ -70,7 +70,7 @@ export class Ghost extends Enemies {
         this.height = this.spriteHeight / 1.2;
         this.image = document.getElementById('enemy2');
         this.x = this.gameWidth;
-        this.y = Math.random() + (this.gameHeight * 0.3);
+        this.y = Math.random() + (this.gameHeight * 0.4);
         this.maxFrame = 5;
         this.angle = 0;
         this.curve = Math.random() * 5;

@@ -10,11 +10,11 @@ export function drawStatusText(context, gameWidth, gameHeight, score, gameover) 
 
     // ketika gameover
     if (gameover) {
-        context.font = "100px Helvetica";
+        context.font = "80px Helvetica";
         context.textAlign = 'center';
         context.fillStyle = 'black';
-        context.fillText("GAMEOVER ,cupu lo !", (gameWidth / 2) + 2, ((gameHeight / 2) - 200) + 2)
+        context.fillText("GAMEOVER ,swipe down atau enter buat restart :)", (gameWidth / 2) + 2, ((gameHeight / 2) - 200) + 2)
         context.fillStyle = 'white';
-        context.fillText("GAMEOVER ,cupu lo !", gameWidth / 2, (gameHeight / 2) - 200)
+        context.fillText("GAMEOVER ,swipe down atau enter buat restart :)", gameWidth / 2, (gameHeight / 2) - 200)
     }
 }
