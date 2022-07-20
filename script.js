@@ -8,7 +8,9 @@ window.addEventListener('load', () => {
     document.querySelector('h1').style.display = "none";
 
     // audio
-    document.getElementById('backsound').play();
+    const myAudio = new Audio()
+    myAudio.src = "sound/backsound.wav";
+    myAudio.play();
 
     const canvas = document.getElementById('canvas1');
     const context = canvas.getContext('2d');
