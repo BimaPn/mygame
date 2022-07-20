@@ -107,6 +107,7 @@ window.addEventListener('load', () => {
         })
         addEnemy.restart();
         // backsound.play();
+        myAudio.play();
         gameover = false;
         animate(0);
     }
