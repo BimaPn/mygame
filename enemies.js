@@ -28,49 +28,49 @@ class Enemies {
 
     }
 }
-export class Raven extends Enemies {
-    constructor(game) {
-        super();
-        this.game = game;
-        this.spriteWidth = 271;
-        this.spriteHeight = 194;
-        this.randomSize = Math.random() * .6 + .6;;
-        this.width = (this.spriteWidth / 1.2) * this.randomSize;
-        this.height = (this.spriteHeight / 1.2) * this.randomSize;
-        this.x = this.game.width;
-        this.y = Math.random() * this.game.height * 0.5;
-        this.image = document.getElementById('raven')
-        this.maxFrame = 5;
-        this.speedX = Math.random() * 7 + 7;
-        this.speedY = 0;
-        this.angle = 0;
-        this.va = Math.random() * 0.1 + 0.2;
-    }
-    update(deltaTime) {
-        super.update(deltaTime)
-        this.angle += this.va;
-        this.y += Math.sin(this.angle) * 5
-    }
-    draw(context) {
-        super.draw(context)
-    }
-}
-export class Plant extends Enemies {
-    constructor(game) {
-        super();
-        this.game = game;
-        this.spriteWidth = 60;
-        this.spriteHeight = 87;
-        this.width = this.spriteWidth * 2.2;
-        this.height = this.spriteHeight * 2.2;
-        this.x = this.game.width;
-        this.y = this.game.height - this.height - this.game.groundMargin;
-        this.image = document.getElementById('plant')
-        this.maxFrame = 1;
-        this.speedX = 0;
-        this.speedY = 0;
-    }
-}
+// export class Raven extends Enemies {
+//     constructor(game) {
+//         super();
+//         this.game = game;
+//         this.spriteWidth = 271;
+//         this.spriteHeight = 194;
+//         this.randomSize = Math.random() * .6 + .6;;
+//         this.width = (this.spriteWidth / 1.2) * this.randomSize;
+//         this.height = (this.spriteHeight / 1.2) * this.randomSize;
+//         this.x = this.game.width;
+//         this.y = Math.random() * this.game.height * 0.5;
+//         this.image = document.getElementById('raven')
+//         this.maxFrame = 5;
+//         this.speedX = Math.random() * 7 + 7;
+//         this.speedY = 0;
+//         this.angle = 0;
+//         this.va = Math.random() * 0.1 + 0.2;
+//     }
+//     update(deltaTime) {
+//         super.update(deltaTime)
+//         this.angle += this.va;
+//         this.y += Math.sin(this.angle) * 5
+//     }
+//     draw(context) {
+//         super.draw(context)
+//     }
+// }
+// export class Plant extends Enemies {
+//     constructor(game) {
+//         super();
+//         this.game = game;
+//         this.spriteWidth = 60;
+//         this.spriteHeight = 87;
+//         this.width = this.spriteWidth * 2.2;
+//         this.height = this.spriteHeight * 2.2;
+//         this.x = this.game.width;
+//         this.y = this.game.height - this.height - this.game.groundMargin;
+//         this.image = document.getElementById('plant')
+//         this.maxFrame = 1;
+//         this.speedX = 0;
+//         this.speedY = 0;
+//     }
+// }
 export class Spider extends Enemies {
     constructor(game) {
         super();

@@ -1,5 +1,5 @@
 import { Background } from "./background.js";
-import { Ghost, Plant, Raven, Spider, Zombie } from "./enemies.js";
+import { Ghost, Spider, Zombie } from "./enemies.js";
 import { InputHandler } from "./input.js";
 import { Player } from "./player.js";
 import { UI } from "./UI.js";
@@ -38,10 +38,10 @@ window.addEventListener('load', () => {
             this.maxSpeed = 5;
             // property untuk enemies
             this.enemies = [];
-            this.enemyTypes = ['spider', 'raven', 'plant', 'ghost', 'zombie'];
+            this.enemyTypes = ['spider', 'ghost', 'zombie'];
             // property untuk particles
             this.particles = [];
-            this.maxParticles = 50;
+            this.maxParticles = 20;
             // collision animation
             this.collisions = [];
             // property untuk player
@@ -81,18 +81,17 @@ window.addEventListener('load', () => {
                 this.timer += deltaTime;
             }
             this.enemies.forEach(enemy => {
-                enemy.update(deltaTime);
-                if (enemy.markForDeleted) this.enemies.splice(this.enemies.indexOf(enemy), 1);
+                    enemy.update(deltaTime);
+                    if (enemy.markForDeleted) this.enemies.splice(this.enemies.indexOf(enemy), 1);
+                })
+                // particle handler
+            this.particles.forEach((particle, index) => {
+                particle.update();
+                if (particle.markForDeleted) this.particles.splice(index, 1);
+                this.particles.length = this.maxParticles
             })
 
-            // particle handler
-            this.particles.forEach((particle, index) => {
-                    particle.update();
-                    if (particle.markForDeleted) this.particles.splice(index, 1);
-                    if (this.particles.length > this.maxParticles) this.particles = this.particles.slice(0, this.maxParticles)
-                })
-                // collison animation handler
-
+            // collison animation handler
             this.collisions.forEach((col, index) => {
                 col.update(deltaTime);
 
@@ -119,11 +118,11 @@ window.addEventListener('load', () => {
             // generate random enemy
             const randomEnemy = this.enemyTypes[Math.floor(Math.random() * this.enemyTypes.length)];
             // jika random enemy plant dan player bergerak,maka spawn musuh ber type plant
-            if (randomEnemy == 'plant' && this.speed > 0) this.enemies.push(new Plant(this));
+            // if (randomEnemy == 'plant' && this.speed > 0) this.enemies.push(new Plant(this));
             // jika random enemy spider dan player bergerak,maka spawn musuh ber type spider
             if (randomEnemy == 'spider' && this.speed > 0) this.enemies.push(new Spider(this));
             // jika random enemy raven,maka spawn musuh ber type raven
-            if (randomEnemy == 'raven') this.enemies.push(new Raven(this));
+            // if (randomEnemy == 'raven') this.enemies.push(new Raven(this));
             // ghost
             if (randomEnemy == 'ghost') {
                 for (let i = 0; i < Math.random() * 2 + 1; i++) {
