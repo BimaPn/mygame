@@ -1,4 +1,4 @@
-import { Background } from "./background.js";
+// import { Background } from "./background.js";
 import { Ghost, Spider, Zombie } from "./enemies.js";
 import { InputHandler } from "./input.js";
 import { Player } from "./player.js";
@@ -49,10 +49,10 @@ window.addEventListener('load', () => {
             this.player.currentState = this.player.states[0];
             this.player.currentState.enter();
             // property untuk background
-            this.backGround = new Background(this)
-                // audio
-            this.backSound = new Audio('backsound2.mp3');
-            this.backSound.loop = true;
+            // this.backGround = new Background(this)
+            // audio
+            // this.backSound = new Audio('backsound2.mp3');
+            // this.backSound.loop = true;
             this.jumpSound = new Audio('jump.mp3');
             this.hitSound = new Audio('hit.wav');
             // frame rate dan score
@@ -67,7 +67,7 @@ window.addEventListener('load', () => {
             this.inteval = Math.random() * 3000 + 3000;
 
             // update untuk background
-            this.backGround.update(deltaTime);
+            // this.backGround.update(deltaTime);
             // update untuk player
             this.player.update(this.input.keys, deltaTime)
 
@@ -100,7 +100,7 @@ window.addEventListener('load', () => {
         }
         draw(context) {
 
-            this.backGround.draw(context)
+            // this.backGround.draw(context)
 
             this.enemies.forEach(enemy => enemy.draw(context));
 

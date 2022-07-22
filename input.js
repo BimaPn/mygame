@@ -13,7 +13,7 @@ export class InputHandler {
                     e.key === "Enter") && this.keys.indexOf(e.key) == -1) {
                 this.keys.push(e.key)
             } else if (e.key === "d") this.game.debug = !this.game.debug;
-            this.game.backSound.play();
+            // this.game.backSound.play();
         })
 
         window.addEventListener('keyup', e => {
@@ -31,7 +31,7 @@ export class InputHandler {
         window.addEventListener('touchstart', e => {
             this.touchY = e.changedTouches[0].pageY;
             this.touchX = e.changedTouches[0].pageX;
-            this.game.backSound.play();
+            // this.game.backSound.play();
         })
         window.addEventListener("touchmove", e => {
             const swipeDistanceY = e.changedTouches[0].pageY - this.touchY;
