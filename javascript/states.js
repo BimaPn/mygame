@@ -49,9 +49,6 @@ export class Jumping extends State {
     }
     enter() {
         if (this.game.player.onGround()) this.game.player.vy -= 50;
-        this.game.jumpSound.pause();
-        this.game.jumpSound.currentTime = 0;
-        this.game.jumpSound.play();
         this.game.player.maxFrame = 5;
         this.game.player.frameY = 1;
         this.game.player.frameX = 0;

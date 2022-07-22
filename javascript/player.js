@@ -80,9 +80,6 @@ export class Player {
                 enemy.y + enemy.height > this.y
             ) {
                 // collasion detected
-                this.game.hitSound.pause();
-                this.game.hitSound.currentTime = 0;
-                this.game.hitSound.play();
                 this.game.collisions.push(new CollisionAnimation(this.game, enemy.x + enemy.width / 2, enemy.y + enemy.height / 2))
                 this.game.enemies.splice(this.game.enemies.indexOf(enemy), 1)
                 if (this.currentState === this.states[4] || this.currentState === this.states[5]) {

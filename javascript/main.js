@@ -51,8 +51,6 @@ window.onload = function() {
             this.player.currentState = this.player.states[0];
             this.player.currentState.enter();
 
-            this.jumpSound = new Audio('../audio/jump.mp3');
-            this.hitSound = new Audio('../audio/hit.wav');
             // frame rate dan score
             this.timer = 0;
             this.inteval = Math.random() * 3000 + 3000;
