@@ -54,10 +54,8 @@ window.addEventListener('load', () => {
             this.backSound = new Audio('backsound2.mp3');
             this.backSound.loop = true;
             this.jumpSound = new Audio('jump.mp3');
-            this.fireSound = new Audio('fire.mp3')
             this.hitSound = new Audio('hit.wav');
-            this.explosionSound = new Audio('explosion.wav')
-                // frame rate dan score
+            // frame rate dan score
             this.timer = 0;
             this.inteval = Math.random() * 3000 + 3000;
             this.UI = new UI(this);
@@ -101,29 +99,25 @@ window.addEventListener('load', () => {
             });
         }
         draw(context) {
-            // draw untuk background
+
             this.backGround.draw(context)
-                // draw untuk enemies
+
             this.enemies.forEach(enemy => enemy.draw(context));
-            // draw untuk player
+
             this.player.draw(context)
-                // draw untuk particles
+
             this.particles.forEach(particle => particle.draw(context))
-                // draw untuk collision animation
+
             this.collisions.forEach(col => col.draw(context));
-            // draw untuk UI score
+
             this.UI.draw(context)
         }
         addEnemy() {
             // generate random enemy
             const randomEnemy = this.enemyTypes[Math.floor(Math.random() * this.enemyTypes.length)];
-            // jika random enemy plant dan player bergerak,maka spawn musuh ber type plant
-            // if (randomEnemy == 'plant' && this.speed > 0) this.enemies.push(new Plant(this));
-            // jika random enemy spider dan player bergerak,maka spawn musuh ber type spider
+
             if (randomEnemy == 'spider' && this.speed > 0) this.enemies.push(new Spider(this));
-            // jika random enemy raven,maka spawn musuh ber type raven
-            // if (randomEnemy == 'raven') this.enemies.push(new Raven(this));
-            // ghost
+
             if (randomEnemy == 'ghost') {
                 for (let i = 0; i < Math.random() * 2 + 1; i++) {
                     this.enemies.push(new Ghost(this));

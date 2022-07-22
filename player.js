@@ -12,7 +12,7 @@ export class Player {
         this.frameX = 0;
         this.frameY = 0;
         this.maxFrame = 4;
-        this.states = [new Sitting(this.game), new Running(this.game), new Jumping(this.game), new Falling(this.game), new Rolling(this.game), new Diving(this.game), new Hit(this.game)];
+        this.states = [new Sitting(this.game), new Running(this.game), new Jumping(this.game), new Falling(this.game), new Hit(this.game)];
         this.image = document.getElementById('player');
         this.speed = 0;
         this.maxSpeed = 10;
@@ -23,9 +23,8 @@ export class Player {
         this.timer = 0;
     }
     update(input, deltaTime) {
-        // untuk meng handle input
         this.currentState.handlerInput(input);
-        // untuk cek collasion
+
         this.checkCollasion();
 
         // animation frame

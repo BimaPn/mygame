@@ -77,8 +77,8 @@ export class Spider extends Enemies {
         this.game = game;
         this.spriteWidth = 310;
         this.spriteHeight = 175;
-        this.width = this.spriteWidth * 1.1;
-        this.height = this.spriteHeight * 1.1;
+        this.width = this.spriteWidth;
+        this.height = this.spriteHeight;
         this.x = this.game.width;
         this.y = Math.random() * this.game.height * 0.5;
         this.image = document.getElementById('spider')
@@ -110,8 +110,8 @@ export class Ghost extends Enemies {
         this.game = game;
         this.spriteWidth = 261;
         this.spriteHeight = 209;
-        this.width = this.spriteWidth / 1.2;
-        this.height = this.spriteHeight / 1.2;
+        this.width = this.spriteWidth;
+        this.height = this.spriteHeight;
         this.image = document.getElementById('ghost');
         this.x = this.game.width + this.game.width / 2;
         this.y = Math.random() + (this.game.height * 0.4);

@@ -38,21 +38,19 @@ export class InputHandler {
             const swipeDistanceX = e.changedTouches[0].pageX - this.touchX;
 
 
-            // swipe up event
+
             if (swipeDistanceY < -this.touchTreshold && this.keys.indexOf('swipe up') === -1) this.keys.push('swipe up');
-            // swipe down event
+
             else if (swipeDistanceY > this.touchTreshold && this.keys.indexOf('swipe down') === -1) {
                 this.keys.push('swipe down');
-            }
-            // swipe right event
-            else if (swipeDistanceX > this.touchTreshold && this.keys.indexOf('swipe right') === -1) this.keys.push('swipe right');
-            // swipe left event
+            } else if (swipeDistanceX > this.touchTreshold && this.keys.indexOf('swipe right') === -1) this.keys.push('swipe right');
+
             else if (swipeDistanceX < -this.touchTreshold && this.keys.indexOf('swipe left') === -1) this.keys.push('swipe left');
 
         })
         window.addEventListener("touchend", e => {
 
-            // hapus ketika selesai di swipe
+
             this.keys.splice(this.keys.indexOf('swipe up'), 1)
             this.keys.splice(this.keys.indexOf('swipe down'), 1)
             this.keys.splice(this.keys.indexOf('swipe right'), 1)
