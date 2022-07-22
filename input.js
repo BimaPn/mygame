@@ -49,7 +49,6 @@ export class InputHandler {
             // swipe left event
             else if (swipeDistanceX < -this.touchTreshold && this.keys.indexOf('swipe left') === -1) this.keys.push('swipe left');
 
-            console.log(this.keys)
         })
         window.addEventListener("touchend", e => {
 
@@ -58,7 +57,6 @@ export class InputHandler {
             this.keys.splice(this.keys.indexOf('swipe down'), 1)
             this.keys.splice(this.keys.indexOf('swipe right'), 1)
             this.keys.splice(this.keys.indexOf('swipe left'), 1)
-            console.log(this.keys)
         })
     }
 }

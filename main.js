@@ -59,14 +59,14 @@ window.addEventListener('load', () => {
             this.explosionSound = new Audio('explosion.wav')
                 // frame rate dan score
             this.timer = 0;
-            this.inteval = Math.random() * 1000 + 1000;
+            this.inteval = Math.random() * 3000 + 3000;
             this.UI = new UI(this);
             this.score = 0;
             this.debug = false;
         }
         update(deltaTime) {
             // random time saat musuh spawn
-            this.inteval = Math.random() * 2000 + 1000;
+            this.inteval = Math.random() * 3000 + 3000;
 
             // update untuk background
             this.backGround.update(deltaTime);
