@@ -1,5 +1,5 @@
 import { CollisionAnimation } from "./collisionAnimation.js";
-import { Diving, Falling, Hit, Jumping, Rolling, Running, Sitting } from "./states.js"
+import { Falling, Hit, Jumping, Running, Sitting } from "./states.js"
 export class Player {
     constructor(game) {
         this.game = game;
@@ -88,7 +88,7 @@ export class Player {
                 if (this.currentState === this.states[4] || this.currentState === this.states[5]) {
                     this.game.score += 1;
                 } else {
-                    this.setState(6, 0);
+                    this.setState(4, 0);
                 }
             }
         });

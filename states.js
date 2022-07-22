@@ -31,8 +31,6 @@ export class Running extends State {
     }
     enter() {
         // audio
-        this.game.fireSound.pause();
-        this.game.fireSound.currentTime = 0;
 
         this.game.player.maxFrame = 8;
         this.game.player.frameY = 3;
@@ -71,8 +69,6 @@ export class Falling extends State {
     }
     enter() {
         // audio
-        this.game.fireSound.pause();
-        this.game.fireSound.currentTime = 0;
 
         this.game.player.maxFrame = 5;
         this.game.player.frameY = 2;
