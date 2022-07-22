@@ -126,12 +126,7 @@ export class Ghost extends Enemies {
         this.angle += 0.04
         super.update(deltaTime)
     }
-    draw(context) {
-        context.save();
-        context.globalAlpha = 0.7;
-        super.draw(context)
-        context.restore();
-    }
+
 }
 export class Zombie extends Enemies {
     constructor(game) {
