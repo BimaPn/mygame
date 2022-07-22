@@ -4,7 +4,11 @@ import { InputHandler } from "./input.js";
 import { Player } from "./player.js";
 import { UI } from "./UI.js";
 
-window.addEventListener('load', () => {
+// window.addEventListener('load', function() {
+
+window.onload = function() {
+
+
 
     const canvas = document.getElementById('canvas1');
     const context = canvas.getContext('2d');
@@ -40,21 +44,15 @@ window.addEventListener('load', () => {
             this.enemies = [];
             this.enemyTypes = ['spider', 'ghost', 'zombie'];
             // property untuk particles
-            this.particles = [];
-            this.maxParticles = 20;
             // collision animation
             this.collisions = [];
             // property untuk player
             this.player = new Player(this);
             this.player.currentState = this.player.states[0];
             this.player.currentState.enter();
-            // property untuk background
-            // this.backGround = new Background(this)
-            // audio
-            // this.backSound = new Audio('backsound2.mp3');
-            // this.backSound.loop = true;
-            this.jumpSound = new Audio('jump.mp3');
-            this.hitSound = new Audio('hit.wav');
+
+            this.jumpSound = new Audio('../audio/jump.mp3');
+            this.hitSound = new Audio('../audio/hit.wav');
             // frame rate dan score
             this.timer = 0;
             this.inteval = Math.random() * 3000 + 3000;
@@ -66,9 +64,6 @@ window.addEventListener('load', () => {
             // random time saat musuh spawn
             this.inteval = Math.random() * 3000 + 3000;
 
-            // update untuk background
-            // this.backGround.update(deltaTime);
-            // update untuk player
             this.player.update(this.input.keys, deltaTime)
 
             // enemies handler
@@ -83,11 +78,7 @@ window.addEventListener('load', () => {
                     if (enemy.markForDeleted) this.enemies.splice(this.enemies.indexOf(enemy), 1);
                 })
                 // particle handler
-            this.particles.forEach((particle, index) => {
-                particle.update();
-                if (particle.markForDeleted) this.particles.splice(index, 1);
-                this.particles.length = this.maxParticles
-            })
+
 
             // collison animation handler
             this.collisions.forEach((col, index) => {
@@ -100,13 +91,11 @@ window.addEventListener('load', () => {
         }
         draw(context) {
 
-            // this.backGround.draw(context)
-
             this.enemies.forEach(enemy => enemy.draw(context));
 
             this.player.draw(context)
 
-            this.particles.forEach(particle => particle.draw(context))
+
 
             this.collisions.forEach(col => col.draw(context));
 
@@ -141,5 +130,8 @@ window.addEventListener('load', () => {
         game.draw(context);
         requestAnimationFrame(animate)
     }
+
     animate(0)
-})
+
+    // })
+}

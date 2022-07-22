@@ -1,5 +1,3 @@
-import { Dust } from "./particles.js";
-
 const states = {
     SITTING: 0,
     RUNNING: 1,
@@ -38,7 +36,7 @@ export class Running extends State {
     }
     handlerInput(input) {
 
-        this.game.particles.unshift(new Dust(this.game, this.game.player.x + this.game.player.width / 2, this.game.player.y + this.game.player.height));
+        // this.game.particles.unshift(new Dust(this.game, this.game.player.x + this.game.player.width / 2, this.game.player.y + this.game.player.height));
 
         if (input.includes("ArrowDown") || input.includes("swipe down")) this.game.player.setState(states.SITTING, 0);
         else if (input.includes("ArrowUp") || input.includes("swipe up")) this.game.player.setState(states.JUMPING, 1);
