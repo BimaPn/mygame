@@ -102,7 +102,7 @@ const addEnemy = new addEnemies(canvas.width, canvas.height, context);
 
 // restart function
 function restartGame() {
-    // player.restart();
+    player.restart();
     layers.forEach(object => {
         object.restart();
     })
