@@ -1,5 +1,5 @@
 // import { Background } from "./background.js";
-import { Ghost, Spider, Zombie } from "./enemies.js";
+import { Zombie } from "./enemies.js";
 import { InputHandler } from "./input.js";
 import { Player } from "./player.js";
 import { UI } from "./UI.js";
@@ -42,7 +42,7 @@ window.onload = function() {
             this.maxSpeed = 5;
             // property untuk enemies
             this.enemies = [];
-            this.enemyTypes = ['spider', 'ghost', 'zombie'];
+
             // property untuk particles
             // collision animation
             this.collisions = [];
@@ -53,14 +53,14 @@ window.onload = function() {
 
             // frame rate dan score
             this.timer = 0;
-            this.inteval = Math.random() * 3000 + 3000;
+            this.inteval = 10000;
             this.UI = new UI(this);
             this.score = 0;
             this.debug = false;
         }
         update(deltaTime) {
             // random time saat musuh spawn
-            this.inteval = Math.random() * 3000 + 3000;
+
 
             this.player.update(this.input.keys, deltaTime)
 
@@ -93,25 +93,14 @@ window.onload = function() {
 
             this.player.draw(context)
 
-
-
             this.collisions.forEach(col => col.draw(context));
 
             this.UI.draw(context)
         }
         addEnemy() {
-            // generate random enemy
-            const randomEnemy = this.enemyTypes[Math.floor(Math.random() * this.enemyTypes.length)];
 
-            if (randomEnemy == 'spider' && this.speed > 0) this.enemies.push(new Spider(this));
-
-            if (randomEnemy == 'ghost') {
-                for (let i = 0; i < Math.random() * 2 + 1; i++) {
-                    this.enemies.push(new Ghost(this));
-                }
-            }
             // zombie
-            if (randomEnemy == 'zombie' && this.speed > 0) this.enemies.push(new Zombie(this));
+            if (this.speed > 0) this.enemies.push(new Zombie(this));
         }
     }
     // declaration game class
